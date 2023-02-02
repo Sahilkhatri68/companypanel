@@ -249,7 +249,8 @@ const EnhancedTableToolbar = (props) => {
         <Tooltip title="View">
           <IconButton
             // sx={{ color: "#fff" }}
-            to={`./../view-product/${window.selected}`}
+            // to={`./../view-product/${window.selected}`}
+            to={`/viewproduct/${window.selected}`}
             component={RouterLink}
           >
             <RemoveRedEyeTwoToneIcon />
@@ -265,10 +266,7 @@ const EnhancedTableToolbar = (props) => {
           title="Edit"
           // sx={{ color: "#fff" }}
         >
-          <IconButton
-            to={`./../update-product/${window.selected}`}
-            component={RouterLink}
-          >
+          <IconButton to={`/update/${window.selected}`} component={RouterLink}>
             <EditTwoToneIcon />
           </IconButton>
         </Tooltip>
@@ -395,7 +393,7 @@ export default function Products() {
   const [featuredImage, setFeaturedImage] = React.useState("");
   const [featuredImageFront, setFeaturedImageFront] = React.useState("");
   const [regularPrice, setRegularPrice] = React.useState("");
-  const [salePrice, setSalePrice] = React.useState("");
+  const [ Price, setSalePrice] = React.useState("");
   const [reviews, setReviews] = React.useState(false);
   const [comments, setComments] = React.useState(false);
   const [isprivate, setPrivate] = React.useState(false);

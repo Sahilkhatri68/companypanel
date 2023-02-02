@@ -34,6 +34,8 @@ import axios from "axios";
 import * as React from "react";
 import ViewMedia from "./pages/ViewMedia";
 import Withdraw from "./pages/Withdraw";
+import ViewProduct from "./pages/ViewProduct";
+import UpdateProduct from "./pages/UpdateProduct";
 
 //Axios allow auth
 axios.defaults.withCredentials = true;
@@ -46,7 +48,7 @@ function App() {
     await axios
       .post(`${process.env.REACT_APP_BACKEND_URL}/login/check`)
       .then((res) => {
-        console.log(res);
+        // console.log(res);
         if (res.data.islogin !== true) {
           navigate("/login");
         }
@@ -77,6 +79,8 @@ function App() {
 
           <Route path="/products" element={<Products />} />
           <Route path="/new-product" element={<AddProduct />} />
+          <Route path="/viewproduct/:slug" element={<ViewProduct />} />
+          <Route path="/update/:slug" element={<UpdateProduct />} />
 
           <Route path="/media" element={<Storage />} />
           <Route path="/viewmedia" element={<ViewMedia />} />
